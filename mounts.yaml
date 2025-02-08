@@ -1,28 +1,28 @@
 mounts:
   - name: filmy
-    what: "micin-nas.micin.local:/volume1/media/filmy"
-    where: "/synology/media/filmy"
-    type: "nfs"
-    options: "rw,async,nfsvers=3,noatime,rsize=2097152,wsize=2097152,nolock,soft"
-    before_docker: true
-
-  - name: serialy
-    what: "micin-nas.micin.local:/volume1/media/serialy"
-    where: "/synology/media/serialy"
+    what: "synology-nas.network.local:/volume1/media"
+    where: "/synology/media"
     type: "nfs"
     options: "rw,async,nfsvers=3,noatime,rsize=2097152,wsize=2097152,nolock,soft"
     before_docker: true
 
   - name: downloads
-    what: "micin-nas.micin.local:/volume1/downloads"
+    what: "synology-nas.network.local:/volume1/downloads"
     where: "/synology/downloads"
     type: "nfs"
     options: "rw,async,nfsvers=3,noatime,rsize=2097152,wsize=2097152,nolock,soft"
     before_docker: true
 
-  - name: fotky
-    what: "micin-nas.micin.local:/volume1/fotky"
-    where: "/synology/fotky"
+  - name: photos
+    what: "synology-nas.network.local:/volume1/photos"
+    where: "/synology/photos"
     type: "nfs"
     options: "rw,async,nfsvers=3,noatime,rsize=2097152,wsize=2097152,nolock,soft"
+    before_docker: true
+
+  - name: downloads
+    what: "//synology-nas.network.local/downloads"
+    where: "/synology/downloads"
+    type: "cifs"
+    options: "credentials=/path-to/synology-nas.creds,iocharset=utf8,rw,vers=3.0,nofail,soft"
     before_docker: true

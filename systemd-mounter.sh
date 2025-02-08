@@ -45,6 +45,7 @@ Description=Mount $NAME
 Requires=network-online.target
 After=network-online.target
 $( [[ "$BEFORE_DOCKER" == "true" ]] && echo "Before=docker.service")
+TimeoutSec=60
 
 [Mount]
 What=$WHAT
