@@ -61,7 +61,7 @@ before_docker: I designed this with intention to mount all needed mountpoints BE
 #### <span style="color:red"> DISCLAIMER: these options may not work for everyone, so read documentation or do your own testing of what options are best for your usecase. </span>
 #
 
-### I created this script to help me faster organise and create mounts on my systems, i create and delete lot of VMs that i test new stuff on. I was tired of recreating mountpoints, deleting them, setting new ones, etc. So i created this helper, it is simple but it works for me :) I hope it helps you a bit ;)
+### I created this script to help me faster organize and create mounts on my systems, i create and delete lot of VMs that i test new stuff on. I was tired of recreating mountpoints, deleting them, setting new ones, etc. So i created this helper, it is simple but it works for me :) I hope it helps you a bit ;)
 
 #
 
