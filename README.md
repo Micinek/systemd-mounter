@@ -83,7 +83,7 @@ After=synology-media-filmy.mount synology-media-serialy.mount synology-downloads
 ### <span style="color:red"> BUT be carefull. If you set up "wait for some service" and the service does not start, or mountpoint is not avalible ( for example you deleted the folder on your NAS ), your docker ( in this case ) won't start at all... </span>
 
 ### Potential Solutions for Failover:
-If you want to avoid Docker being blocked indefinitely, you can add a timeout:  ( already in the final script )
+If you want to avoid Docker being blocked indefinitely, you can add a timeout to your docker.service:
 
 ```bash
 [Unit]
