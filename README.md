@@ -1,5 +1,20 @@
 # systemd-mounter
 ### A shortcut bash script for easy management of systemd mount services. Handles creation, mounting and removal of unused mounts in one simple .yaml file.
+---
+
+### **When or Why Use This Approach Instead of fstab?**
+| Feature | Systemd Mount Units (YAML Script) | fstab |
+|---------|---------------------------------|------|
+| **Reliability on boot** | ✅ Retries automatically | ❌ Can fail & cause boot issues |
+| **Handles network dependencies** | ✅ Yes, with `After=network-online.target` | ❌ No built-in handling |
+| **Easier management (add/remove mounts)** | ✅ Edit YAML & rerun script | ❌ Manually edit `/etc/fstab` and reload daemons |
+| **Automated cleanup of old mounts** | ✅ Yes | ❌ No, must manually unmount and remove |
+| **Security (storing credentials separately)** | ✅ Yes, supports `.creds` file | ⚠️ Possible, but needs manual setup |
+| **Order dependencies (mounts before services like Docker)** | ✅ Yes, using `Before=` | ❌ No built-in way |
+| **Parallel execution (faster boot)** | ✅ Yes | ❌ No, mounts sequentially |
+| **Better debugging & logging** | ✅ Yes, via `systemctl status` & `journalctl` | ❌ No built-in logs |
+
+---
 
 #
 Script takes input from file mounts.yaml in nice, clearly readable form of... you guessed it... YAML, and makes systemd service for each mount.
